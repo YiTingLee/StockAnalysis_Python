@@ -12,7 +12,7 @@ def inc_dec(c,o):
     return value
 
 start = datetime.datetime(2016,3,1)
-end = datetime.datetime(2016,3,10)
+end = datetime.datetime(2017,7,10)
 
 df = data.DataReader(name="GOOG", data_source="google", start=start, end=end)
 
@@ -27,7 +27,7 @@ print(df)
 
 # print(date_increase)
 
-p = figure(x_axis_type='datetime', width=1000, height=300, title="Candlestick Chart")
+p = figure(x_axis_type='datetime', width=1600, height=500, title="Candlestick Chart")
 p.grid.grid_line_alpha = 0.3
 
 hours_12=12*60*60*1000

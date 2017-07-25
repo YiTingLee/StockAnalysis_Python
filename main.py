@@ -28,8 +28,11 @@ print(df)
 # print(date_increase)
 
 p = figure(x_axis_type='datetime', width=1000, height=300, title="Candlestick Chart")
+p.grid.grid_line_alpha = 0.3
 
 hours_12=12*60*60*1000
+
+p.segment(df.index, df.High, df.index, df.Low, color = 'Black')
 
 p.rect(df.index[df.Status == "Increase"], df.Middle[df.Status=="Increase"], hours_12, df.Height[df.Status=="Increase"], fill_color='green', line_color='black')
 p.rect(df.index[df.Status == "Decrease"], df.Middle[df.Status=="Decrease"], hours_12, df.Height[df.Status=="Decrease"], fill_color='red', line_color='black')
